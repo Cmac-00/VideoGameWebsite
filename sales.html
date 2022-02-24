@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0ef36cb894.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="message.css">
+    <title>Game Sales</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a href="home.html"> <img src="logo_transparent.png" class="logo"></a>
+        <ul class="topbar">
+
+            <li><a href="sales.html"><i class="fas fa-store"></i> Game Sales</a></li>
+            <li><a href="#" onclick="signIn()"><i class="fas fa-edit"></i> Data Editor</a></li>
+            <li><a href="message.html"><i class="fas fa-envelope"></i> Message Us</a></li>
+            <li><a href="signin.html"><i class="fas fa-user"></i> Sign In</a></li>
+        </ul>
+    </div>
+    <div class="banner">
+        <nav class="navbar navbar-expand-lg navbar-dark" >
+            <a class="navbar-brand" href="#" style="color: #f1c40f;">Charts</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link" href="global.php">Global Sales</a>
+                <a class="nav-item nav-link" href="publisher.php">Publishers</a>
+                <a class="nav-item nav-link" href="#">Regional Sales</a>
+                <a class="nav-item active nav-link" href="sales.html">Top 10 Table <span class="sr-only">(current)</span></a>
+              </div>
+            </div>
+          </nav>
+
+
+
+        <h1 id="salesdesc">Video Game Sales</h1>
+
+       
+            </head>
+
+        <div class="row">
+            <div class="col">
+                <div class="card card-body">
+                    <input id="search-input" type="text" placeholder="Search Name">
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover table-striped">
+                <thead class="head">
+                    <tr>
+                        <th scope="col">Rank</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Platform</th>
+                        <th scope="col">Year </th>
+                        <th scope="col">Genre</th>
+                        <th scope="col">Publisher</th>
+                        <th scope="col">North America Sales (million)</th>
+                        <th scope="col">Europe Sales (million)</th>
+                        <th scope="col">Japan Sales (million)</th>
+                        <th scope="col">Other Sales (million)</th>
+                        <th scope="col">Global Sales (million)</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        var myArray = [
+            {
+                "Rank": "1",
+                "Name": "Wii Sports",
+                "Platfrom": "Wii",
+                "Year": "2006",
+                "Genre": "Sports",
+                "Publisher": "Nintendo",
+                "NorthAmericaSales": "41.49",
+                "EuropeSales": "29.02",
+                "JapanSales": "3.77",
+                "OtherSales": "8.46",
+                "GlobalSales": "82.74"
+            },
+
+            {
+                "Rank": "2",
+                "Name": "Super Mario Bros.",
+                "Platfrom": "NES",
+                "Year": "1985",
+                "Genre": "Platform",
+                "Publisher": "Nintendo",
+                "NorthAmericaSales": "29.08",
+                "EuropeSales": "3.58",
+                "JapanSales": "6.81",
+                "OtherSales": "0.77",
+                "GlobalSales": "40.24"
+            },
+            {
+                "Rank": "3 ",
+                "Name": "Mario Kart",
+                "Platfrom": "Wii",
+                "Year": "2008",
+                "Genre": "Racing",
+                "Publisher": "Nintendo",
+                "NorthAmericaSales": "15.85",
+                "EuropeSales": "12.88",
+                "JapanSales": "3.79",
+                "OtherSales": "3.31",
+                "GlobalSales": "35.82"
+            },
+
+            {
+                "Rank": "4",
+                "Name": "Wii Sports",
+                "Platfrom": "Wii",
+                "Year": "2009",
+                "Genre": "Sports",
+                "Publisher": "Nintendo",
+                "NorthAmericaSales": "15.75",
+                "EuropeSales": "11.01",
+                "JapanSales": "3.28",
+                "OtherSales": "2.96",
+                "GlobalSales": "33"
+            },
+
+            {
+                "Rank": "5",
+                "Name": "Pokemon Red/ Pokemon Blue",
+                "Platfrom": "GB",
+                "Year": "1996",
+                "Genre": "Role Playing",
+                "Publisher": "Nintendo",
+                "NorthAmericaSales": "11.27",
+                "EuropeSales": "8.89",
+                "JapanSales": "10.22",
+                "OtherSales": " 1",
+                "GlobalSales": "31.37"
+            },
+            {
+        "Rank": "6",
+        "Name": "Tetris",
+        "Platfrom": "GB",
+        "Year": "1989",
+        "Genre": "Puzzle",
+        "Publisher": "Nintendo",
+        "NorthAmericaSales": "23.2",
+        "EuropeSales": "2.26",
+        "JapanSales": "4.22",
+        "OtherSales": "0.58",
+        "GlobalSales": "30.26"
+    },
+    {
+        "Rank": "7",
+        "Name": "New Super Mario Bros.",
+        "Platfrom": "DS",
+        "Year": "2006",
+        "Genre": "Platform",
+        "Publisher": "Nintendo",
+        "NorthAmericaSales": "11.38",
+        "EuropeSales": "9.23",
+        "JapanSales": "6.5",
+        "OtherSales": "2.9",
+        "GlobalSales": "30.01"
+    },
+    {
+        "Rank": "8",
+        "Name": "Wii Play",
+        "Platfrom": "Wii",
+        "Year": "2006",
+        "Genre": "Misc",
+        "Publisher": "Nintendo",
+        "NorthAmericaSales": "14.03",
+        "EuropeSales": "9.2",
+        "JapanSales": "2.93",
+        "OtherSales": "2.85",
+        "GlobalSales": "29.02"
+    },
+    {
+        "Rank": "9",
+        "Name": "New Super Mario Bros. Wii",
+        "Platfrom": "Wii",
+        "Year": "2009",
+        "Genre": "Platform",
+        "Publisher": "Nintendo",
+        "NorthAmericaSales": "14.59",
+        "EuropeSales": "7.06",
+        "JapanSales": "4.7",
+        "OtherSales": "2.26",
+        "GlobalSales": "28.62" },
+    {
+        "Rank": "10",
+        "Name": "Duck Hunt",
+        "Platfrom": "NES",
+        "Year": "1984",
+        "Genre": "Shooter",
+        "Publisher": "Nintendo",
+        "NorthAmericaSales": "26.93",
+        "EuropeSales": "0.63",
+        "JapanSales": "0.28",
+        "OtherSales": "0.47",
+        "GlobalSales": "28.31"
+    }
+        ]
+
+        console.log(myArray)
+
+
+        $('#search-input').on('keyup', function () {
+            var value = $(this).val()
+            console.log('Value:', value)
+            var data = searchTable(value, myArray)
+            buildTable(data)
+        })
+
+        buildTable(myArray)
+
+        function searchTable(value, data) {
+            var filteredData = []
+
+            for (var i = 0; i < data.length; i++) {
+                value = value.toLowerCase()
+                name = data[i].Name.toLowerCase()
+
+                if (name.startsWith(value)) {
+                    filteredData.push(data[i])
+                }
+            }
+
+            return filteredData
+        }
+
+        function buildTable(data) {
+            var table = document.getElementById('myTable')
+
+            table.innerHTML = ''
+
+            for (var i = 0; i < data.length; i++) {
+                var row = `<tr>
+
+                            <td>${data[i].Rank}</td>
+                            <td>${data[i].Name}</td>
+                            <td>${data[i].Platfrom}</td>
+                            <td>${data[i].Year}</td>
+                            <td>${data[i].Genre}</td>
+                            <td>${data[i].Publisher}</td>
+                            <td>${data[i].NorthAmericaSales}</td>
+                            <td>${data[i].EuropeSales}</td>
+                            <td>${data[i].JapanSales}</td>
+                            <td>${data[i].OtherSales}</td>
+                            <td>${data[i].GlobalSales}</td>
+                        
+                            </tr>`
+
+                table.innerHTML += row
+            }
+        }
+
+        function sweetAlertClick() {
+            swal({
+                text: "Gallery Currently Unavailable",
+                icon: "warning" ,
+                button: false,
+            });
+        }
+
+
+
+
+    </script>
+
+    <footer class="footer">
+        <div class="inner_footer">
+            <div class="logo_container">
+                <img src="logo_transparent.png">
+            </div>
+
+            <div class="footer_third">
+                <h1>Need Help?</h1>
+                <a href=#>Terms &amp; Conditions</a>
+                <a href=#>Privacy Policy</a>
+                <a href=#>Careers</a>
+            </div>
+
+            <div class="footer_third">
+                <h1>More</h1>
+                <a href=#>Future Gaming</a>
+                <a href=#>Our Team</a>
+                <a href=#>Twitch Events</a>
+            </div>
+
+            <div class="footer_third">
+                <h1>Follow Us</h1>
+                <li><a href=#><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href=#><i class="fab fa-instagram-square"></i> </a></li>
+                <li><a href=#><i class="fab fa-twitter-square"></i> </a></li>
+                <li><a href=#><i class="fab fa-linkedin"></i> </a></li>
+
+                <div class="address">
+                    Copyright &copy; Game Network<br>
+                    Queens University Belfast<br>
+                    16 Malone Road<br>
+                    Belfast<br>
+                    BT9 6SB
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

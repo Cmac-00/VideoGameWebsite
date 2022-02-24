@@ -1,0 +1,285 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Nunito", sans-serif;
+    text-decoration: none;
+}
+    body {
+    height: 100%;
+    width: 100%;
+
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(8, 67, 145, 0.76), rgba(28, 51, 128, 0.75)), url(gamesimage.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+
+.bannerb {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(8, 67, 145, 0.76), rgba(248, 106, 241, 0.75)), url(gamesimage.jpg);
+    background-position: center;
+    background-size: cover;
+
+}
+
+
+
+.navbar {
+    width: 100%;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+      
+}
+.logo {
+    margin: -15px 0px;
+    width: 200px;
+    cursor: pointer;
+    margin-left: 3%;
+    
+}
+.navbar ul {
+    margin: 0 10%;
+}
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0px 10px;
+    align-items: center;
+    position: relative;
+    
+    
+}
+.navbar ul li a{
+    text-decoration: none;
+    color:rgb(241, 196, 17);
+    text-transform: uppercase;
+    padding-right: 0px;
+    
+    
+}
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #f1c40f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+
+}
+.writing {
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    position: absolute;
+    color: white;
+    transform: translateY(-50%);
+}
+.writing h1{
+    font-size: 50px;
+    margin-top: 30px;
+}
+
+.writing p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    font-size: 20px;
+}
+ button{
+    width: 300px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #f1c40f;
+    color: #f1c40f;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+span {
+    width: 0;
+    height: 100%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #257ed8;
+    z-index: -1;
+}
+
+button:hover span{
+    width: 100%;
+    transition: 0.2s;
+}
+
+.footer {
+    width: 100vw;
+    display: block;
+    overflow: hidden;
+    padding: 70px 0;
+   box-sizing: border-box;
+    background-color: #34495e;
+}
+
+.inner_footer {
+    display: block;
+    margin: 0 auto;
+    width: 1100px;
+    height: 100%;
+}
+
+.inner_footer .logo_container {
+    width: 35%;
+    float: left;
+    display: block;
+    height: 100%;
+}
+
+.inner_footer .logo_container img {
+    width: 160px;
+    height: auto;
+    
+}
+
+.inner_footer .footer_third{
+    width: calc(21.6666666667% - 20px);
+    margin-right: 10px;
+    float: left;
+    height: 100%;
+}
+.inner_footer .footer_third:last-child {
+    margin-right: 0;
+}
+
+.inner_footer .footer_third h1{
+    font-family: "Nunito";
+    font-size: 22px;
+    color: #f1c40f;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.inner_footer .footer_third a{
+    font-family: "Nunito";
+    font-size: 18px;
+    color: #f1c40f;
+    display: block;
+    font-weight: 200;
+    width: 100%;
+   padding-bottom: 5px;
+}
+
+.inner_footer .footer_third li {
+    font-size: 20px;
+    padding: 0 5px ;
+    display: inline-block;
+}
+
+.inner_footer .footer_third .address {
+    color: #f1c40f;
+    font-family: "Nunito";
+    font-size: 16px;
+    font-weight: 200;
+    display: block;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.swal-overlay {
+    background-color: rgba(38, 99, 211, 0.63);
+
+}
+
+@media (max-width: 700px){
+.logo {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -150px;
+    
+}
+
+}
+
+@media (max-width: 700px) {
+.navbar ul {
+  display: block;
+  text-align: center;
+  margin: auto;
+  padding-top: 20px;
+}
+}
+
+@media (max-width: 700px) {
+    .writing  {
+        margin-top: 20px;
+        width: 80%;
+        left: 10%;
+        text-align: center;
+        top: 50%;
+        position: absolute;
+        color: white;
+        
+        
+}
+}
+
+@media (max-width: 700px){
+    .writing h1{
+        margin-top: 20px;
+        font-size: 30px;
+        
+
+    }
+}
+
+@media (max-width: 700px) {
+    .writing p {
+        margin-top: 20px;
+        margin-right: 10px;
+        line-height: 25px;
+    }
+}
+
+@media (max-width: 700px) {
+
+}
+
+@media (max-width: 700px){
+    .footer .inner_footer {
+        width: 90%;
+        text-align: center;
+    }
+    .inner_footer .logo_container,
+    .inner_footer .footer_third {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+
+
+
+

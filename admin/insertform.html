@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/0ef36cb894.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="message.css">
+
+  <title>Insert Game</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+  <div class="banner">
+    <div class="navbar">
+      <a href="home.html"> <img src="logo_transparent.png" class="logo"></a>
+      <ul class="topbar">
+
+        <li><a href="../sales.html"><i class="fas fa-store"></i> Game Sales</a></li>
+        <li><a href="index.php"><i class="fas fa-edit"></i> Data Editor</a></li>
+        <li><a href="../message.html"><i class="fas fa-envelope"></i> Message Us</a></li>
+        <li><a href="signout.php"><i class="fas fa-sign-out-alt"></i>Sign Out</a></li>
+      </ul>
+    </div>
+
+    <form method="POST" action="insertgame.php">
+      <div class="forms">
+        <div class="field">
+          <label class="label">Video Game Name</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Enter Name" name="name">
+          </div>
+        </div>
+
+        <div class="forms">
+            <div class="field">
+              <label class="label">Select Platform</label>
+              <div class="control">
+                <div class="select">
+                  <select name="platform">
+                    <option value =16>Select Platform</option>
+                    <option value=1>Playstation</option>
+                    <option value=5>Xbox</option>
+                    <option value = 9>Wii</option>
+                    <option value=15>Nintendo 64</option>
+                    <option value=11>GameBoy</option>
+                    <option value =21>GameCube</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="forms">
+                <div class="field">
+                  <label class="label">Release Year</label>
+                  <div class="control">
+                    <input class="input" type="number" placeholder="Enter Year eg 2003" name="year">
+                  </div>
+                </div>
+
+                <div class="forms">
+                    <div class="field">
+                      <label class="label">Genre</label>
+                      <div class="control">
+                        <div class="select">
+                          <select name="genre">
+                            <option value = 10>Select Genre</option>
+                            <option value=1>Role-Playing</option>
+                            <option value=2>Shooter</option>
+                            <option value = 3>Sports</option>
+                            <option value=4>Platform</option>
+                            <option value=5>Racing</option>
+                            <option value =6>Puzzle</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="forms">
+                        <div class="field">
+                          <label class="label">Game Publisher</label>
+                          <div class="control">
+                            <input class="input" type="text" placeholder="Enter Game Publisher" name="publisher">
+                          </div>
+                        </div>
+
+                        <div class="forms">
+                            <div class="field">
+                              <label class="label">North America Sales</label>
+                              <div class="control">
+                                <input class="input" type="number" step="0.01" placeholder="Enter North America Sales eg. 8.21 (m)" name="na">
+                              </div>
+                            </div>
+
+                            <div class="forms">
+                                <div class="field">
+                                  <label class="label">Europe Sales</label>
+                                  <div class="control">
+                                    <input class="input" type="number"  step="0.01" placeholder="Enter European Sales eg. 8.21 (m)" name="eu">
+                                  </div>
+                                </div>
+
+                                <div class="forms">
+                                    <div class="field">
+                                      <label class="label"> Japan Sales</label>
+                                      <div class="control">
+                                        <input class="input" type="number"  step="0.01" placeholder="Enter Japan Sales eg. 8.21 (m)" name="jp">
+                                      </div>
+                                    </div>
+
+                                    <div class="forms">
+                                        <div class="field">
+                                          <label class="label">Other Sales</label>
+                                          <div class="control">
+                                            <input class="input" type="number" step="0.01" placeholder="Enter Other Sales eg. 8.21 (m)" name="other">
+                                          </div>
+                                        </div>
+
+                                        <div class="forms">
+                                            <div class="field">
+                                              <label class="label">Global Sales</label>
+                                              <div class="control">
+                                                <input class="input" type="number" step="0.01" placeholder="Enter Global Sales eg. 8.21 (m)" name="global">
+                                              </div>
+                                            </div>
+
+
+
+        
+
+        
+
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link">Submit</button>
+          </div>
+          <div class="control">
+            <button class="button is-link is-light">Cancel</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  </form>
+
+
+
+  <footer class="footer">
+    <div class="inner_footer">
+      <div class="logo_container">
+        <img src="logo_transparent.png">
+      </div>
+
+      <div class="footer_third">
+        <h1>Need Help?</h1>
+        <a href=#>Terms &amp; Conditions</a>
+        <a href=#>Privacy Policy</a>
+        <a href=#>Careers</a>
+      </div>
+
+      <div class="footer_third">
+        <h1>More</h1>
+        <a href=#>Future Gaming</a>
+        <a href=#>Our Team</a>
+        <a href=#>Twitch Events</a>
+      </div>
+
+      <div class="footer_third">
+        <h1>Follow Us</h1>
+        <li><a href=#><i class="fab fa-facebook-square"></i></a></li>
+        <li><a href=#><i class="fab fa-instagram-square"></i> </a></li>
+        <li><a href=#><i class="fab fa-twitter-square"></i> </a></li>
+        <li><a href=#><i class="fab fa-linkedin"></i> </a></li>
+
+        <div class="address">
+          Copyright &copy; Game Network<br>
+          Queens University Belfast<br>
+          16 Malone Road<br>
+          Belfast<br>
+          BT9 6SB
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <script>
+
+    function sweetAlertClick() {
+      swal({
+        text: "Gallery Currently Unavailable",
+        icon: "warning",
+        button: false,
+      });
+    }
+  </script>
+
+</body>
+
+</html>
